@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cobrinha Extrema</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MENU PRINCIPAL -->
+<div id="menu">
+    <h1>Cobrinha Extrema</h1>
+    <p>Personalize sua cobra antes de jogar!</p>
+
+    <!-- Nome do jogador -->
+    <div class="menu-row">
+        <label for="playerName">Nome:</label>
+        <input type="text" id="playerName" placeholder="Digite seu nome">
+    </div>
+
+    <!-- Cor da cobra -->
+    <div class="menu-row">
+        <label for="snakeColor">Cor da cobra:</label>
+        <input type="color" id="snakeColor" value="#00ff00">
+    </div>
+
+    <!-- Acessórios -->
+    <div class="menu-row">
+        <label for="snakeAccessory">Acessório:</label>
+        <select id="snakeAccessory">
+            <option value="none">Nenhum</option>
+            <option value="hat">Chapéu</option>
+            <option value="glasses">Óculos</option>
+            <option value="cape">Capa</option>
+        </select>
+    </div>
+
+    <!-- Seleção de fase -->
+    <div class="menu-row">
+        <label for="levelSelect">Fase:</label>
+        <select id="levelSelect">
+            <option value="1">Fase 1 - Clássica</option>
+            <option value="2">Fase 2 - Labirinto</option>
+            <option value="3">Fase 3 - Infinita</option>
+        </select>
+    </div>
+
+    <!-- Botões do menu -->
+    <div class="menu-row buttons">
+        <button id="startSolo">Jogar Solo</button>
+        <button id="startMulti">Multiplayer</button>
+        <button id="viewRank">Ranking</button>
+        <button id="instructions">Como Jogar</button>
+    </div>
+
+    <!-- CRÉDITO -->
+    <p class="creator">Criador: Rodrigo Melo</p>
+</div>
+
+<!-- INSTRUÇÕES -->
+<div id="instructionsMenu" class="hidden">
+    <h2>Como Jogar</h2>
+    <ul>
+        <li>Use as teclas <strong>W/A/S/D</strong> para o jogador 2</li>
+        <li>Use as setas <strong>↑ ↓ ← →</strong> para o jogador 1</li>
+        <li>Coma a comida para crescer e ganhar pontos</li>
+        <li>Evite bater nas paredes ou em si mesmo</li>
+        <li>Escolha fases diferentes para desafios variados</li>
+    </ul>
+    <button onclick="showMenu()">Voltar</button>
+</div>
+
+<!-- CANVAS DO JOGO -->
+<div id="gameContainer" class="hidden">
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="hud">
+        <span id="scoreDisplay">Pontuação: 0</span>
+        <span id="levelDisplay">Fase: 1</span>
+    </div>
+    <div id="creatorHUD">Criador: Rodrigo Melo</div>
+</div>
+
+<!-- RANKING -->
+<div id="ranking" class="hidden">
+    <h2>Ranking</h2>
+    <ol id="rankList"></ol>
+    <button onclick="showMenu()">Voltar</button>
+</div>
+
+<footer>
+    <p>Jogo criado por RovixStudio - Versão Expandida 2025</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
