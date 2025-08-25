@@ -1,0 +1,50 @@
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg,#111,#333); color:#fff; text-align:center; }
+
+/* MENU */
+#menu, #instructionsMenu, #ranking { 
+    position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); 
+    background: rgba(0,0,0,0.85); padding:30px; border-radius:15px; 
+    box-shadow: 0 0 20px #00ff00; width: 420px; 
+}
+
+.menu-row { margin:15px 0; display:flex; justify-content:space-between; align-items:center; }
+.menu-row input, .menu-row select { padding:5px; border-radius:5px; border:none; }
+.menu-row.buttons { justify-content:center; flex-wrap:wrap; }
+
+button { margin:5px; padding:10px 20px; background:#00ff00; border:none; color:#000; font-weight:bold; cursor:pointer; border-radius:10px; transition:all 0.3s ease; }
+button:hover { background:#00cc00; transform:scale(1.05); }
+
+/* CANVAS */
+#gameContainer { position:relative; margin-top:20px; }
+canvas { background:#111; border:3px solid #00ff00; display:block; margin:0 auto; border-radius:10px; }
+#hud { display:flex; justify-content:space-between; width:800px; margin:10px auto; font-size:18px; }
+#creatorHUD { position:absolute; bottom:5px; right:10px; color:#00ff00; font-size:12px; font-style:italic; }
+
+/* HIDDEN CLASS */
+.hidden { display:none; }
+
+/* RANKING */
+#ranking ol { text-align:left; margin:20px; }
+#ranking li { padding:5px 0; }
+
+/* FOOTER */
+footer { position:fixed; bottom:0; width:100%; text-align:center; padding:10px; background:rgba(0,0,0,0.5); }
+
+/* ANIMAÇÕES */
+@keyframes blink { 0%,50%,100% { opacity:1; } 25%,75% { opacity:0.5; } }
+button { animation: blink 3s infinite; }
+
+/* ACESSÓRIOS */
+.snake-hat::after { content:"🎩"; position:absolute; font-size:20px; }
+.snake-glasses::after { content:"🕶️"; position:absolute; font-size:20px; }
+.snake-cape::after { content:"🧥"; position:absolute; font-size:20px; }
+
+/* FASES */
+.level-1 { border-color:#00ff00; }
+.level-2 { border-color:#ff8800; }
+.level-3 { border-color:#ff00ff; }
+
+/* RESPONSIVO */
+@media(max-width:850px){ canvas{width:95%; height:auto;} #hud{width:95%;} }
